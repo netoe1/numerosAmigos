@@ -33,8 +33,8 @@ public class ReprodutorSom
         }
         else
         {
-            this.reprodutorAudioWarning("O gameobject atrelado não possui audio source");
-            this.reprodutorAudioWarning("A API irá adicionar um audio source automaticamente.");
+            //this.reprodutorAudioWarning("O gameobject atrelado não possui audio source");
+            //this.reprodutorAudioWarning("A API irá adicionar um audio source automaticamente.");
             addAudioSource();
             reproduzirArquivo(filename);
         }
