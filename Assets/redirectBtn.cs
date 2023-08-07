@@ -16,4 +16,9 @@ public class redirectBtn : MonoBehaviour
         SceneManager.LoadScene(nome_da_cena);   
         return;
     }
+
+    public void passarDeFase()
+    {
+        GerenciaJogo.passarFase();
+    }
 }
