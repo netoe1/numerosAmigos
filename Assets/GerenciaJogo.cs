@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
+using UnityEditor;
 
 /*  Tipos de fase válidos:
  *  Ceu;
@@ -29,10 +30,11 @@ public class GerenciaJogo : MonoBehaviour
 {
     // Constantes!
     const string mensagemTutorialTexto = "Selecione a quantidade correta indicada!";
+    const string tagInstanciar = "instanciar";
 
 
     // Configuração do HUD
-
+    [SerializeField] private GameObject objetoPai_instanciar;
     [SerializeField] private Text nroHud;
     [SerializeField] private Text tutorialTexto;
     [SerializeField] private Image logoAnimal;
@@ -47,7 +49,7 @@ public class GerenciaJogo : MonoBehaviour
     private static int itens_clicarMax_static;
 
     //GameObjects Load
-    [SerializeField] List<GameObject> itens;
+    List<GameObject> itens;
 
     //Variáveis de acesso externo:
     private static string cenaProxNome_static;
@@ -61,7 +63,8 @@ public class GerenciaJogo : MonoBehaviour
 
     void Start()
     {
-      
+        // Reconhecendo os itens sozinho!
+        adicionandoComponentes();
         System.Random genRand = new System.Random();
         //Inicializando parâmetros.
         itens_clique = 0;
@@ -120,4 +123,18 @@ public class GerenciaJogo : MonoBehaviour
         }
         logoAnimal.sprite = itens[0].GetComponent<Image>().sprite;
     }
+
+
+    private void adicionandoComponentes()
+    {
+        List<GameObject> todosFilhos = objetoPai_instanciar.GetComponentsInChildren<GameObject>();
+        
+        for(int i = 0; i < todosFilhos.Length;i++)
+        {
+            if (todosFilhos[i].tag == tagInstanciar)
+            {
+                itens.Add(todosFilhos[i]);
+            }
+        }
+    
 }
