@@ -34,7 +34,7 @@ public class ItensClique :
         this.gameObject.GetComponent<RectTransform>().localScale = new Vector3(default_scale, default_scale, default_scale);
         // Configurando BoxCollider
 
-        boxCollider.size = this.gameObject.GetComponent<RectTransform>().rect.size;
+        boxCollider.size =  new Vector2(this.gameObject.GetComponent<RectTransform>().rect.size.x * default_scale, this.gameObject.GetComponent<RectTransform>().rect.size.y * default_scale);
     }
 
     void config_outline(bool enter)

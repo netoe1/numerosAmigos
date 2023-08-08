@@ -20,12 +20,18 @@ using UnityEngine.SceneManagement;
 
 public class GerenciaJogo : MonoBehaviour
 {
+    // Configuração do HUD
+
+    [SerializeField] private Text textoHud;
+
+
     //Parâmetros fase:
     [SerializeField] private string cenaAtualNome;
     [SerializeField] private string cenaProxNome;
+    [SerializeField] private int itens_clicarMax;
     //Parâmetros controle fase
     private static int itens_clique;
-    private static int itens_clicarMax;
+    private static int itens_clicarMax_static;
 
     //GameObjects Load
     [SerializeField] List<GameObject> itens;
@@ -33,22 +39,51 @@ public class GerenciaJogo : MonoBehaviour
     //Variáveis de acesso externo:
     private static string cenaProxNome_static;
     private static GameObject gameObject_static;
+    //public static Text textoHud_static;
 
     // Pré Configurações sprites.
 
     [SerializeField] private string spriteParaCarregar_Animal;
 
+
+
+    //Itens especiais
+
+
+    private static string[] numerosPorExtenso = {
+                    "Um", "Dois", "Três", "Quatro", "Cinco",
+                    "Seis", "Sete", "Oito", "Nove", "Dez", "Onze",
+                    "Doze","Treze","Quatorze","Quinze","Dezesseis",
+                    "Dezessete","Dezoito","Dezenove","Vinte"
+                    };
+    
+
+
     void Start()
     {
-
+        System.Random genRand = new System.Random();
         //Inicializando parâmetros.
         itens_clique = 0;
-        itens_clicarMax = itens.Count;
 
         //Inicializando Objetos para acesso externo.
         cenaProxNome_static = cenaProxNome;
         gameObject_static = this.gameObject;
+        itens_clicarMax_static = itens_clicarMax;
+        // textoHud_static = this.textoHud;
 
+        if(itens_clicarMax_static != 1)
+        {
+            textoHud.text = "Selecione "
+            + numerosPorExtenso[itens_clicarMax_static - 1]
+            + " animais!";
+        }
+        else
+        {
+            textoHud.text = "Selecione "
+            + numerosPorExtenso[itens_clicarMax_static - 1]
+            +  " animal!";
+        }
+        
         this.configurarSprites();
     }
 
@@ -57,7 +92,7 @@ public class GerenciaJogo : MonoBehaviour
     {
 
         ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral", gameObject_static);
-        if (itens_clique == itens_clicarMax)
+        if (itens_clique == itens_clicarMax_static)
         {
             reprodutor.reproduzirArquivo("muito_bem");
             reprodutor.reproduzirArquivo("sound_acerto");
@@ -73,22 +108,14 @@ public class GerenciaJogo : MonoBehaviour
     {
         ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral",gameObject_static);
       
-        if(itens_clique + 1 <= itens_clicarMax)
-        {
-            reprodutor.reproduzirArquivo("sound_acerto");
-            itens_clique++;
-            return;
-        }
-       
+        reprodutor.reproduzirArquivo("sound_acerto");
+        itens_clique++;
     }
 
     public static void removerClique()
     {
-        if (itens_clique - 1 >= 0)
-        {
-            itens_clique--;
-        }
-    }
+        itens_clique--;
+;    }
 
     private void configurarSprites()
     {
@@ -98,4 +125,5 @@ public class GerenciaJogo : MonoBehaviour
             itens[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(spriteParaCarregar_Animal);
         }
     }
+
 }
