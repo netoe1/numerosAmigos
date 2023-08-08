@@ -20,14 +20,12 @@ public class ReprodutorSom
         audioSource = gameObject_atrelado.GetComponent<AudioSource>();
         if (audioSource != null)
         {
-            this.reprodutorAudioLog("O gameobject atrelado possui audiosource");
+            //this.reprodutorAudioLog("O gameobject atrelado possui audiosource");
             audioSource.clip = Resources.Load<AudioClip>(this.PATHPASTA_AUDIOS + '/' + filename);
             if (audioSource.clip != null)
             {
-                await Task.Delay(100);
                 audioSource.Play();
                 await Task.Delay(Mathf.RoundToInt(audioSource.clip.length) * 1000);
-                await Task.Delay(100);
             }
             else
             {

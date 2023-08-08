@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using System.Threading.Tasks;
 
 /*  Tipos de fase válidos:
  *  Ceu;
@@ -23,6 +21,8 @@ public class GerenciaJogo : MonoBehaviour
     // Configuração do HUD
 
     [SerializeField] private Text textoHud;
+    [SerializeField] private Text tutorialTexto;
+    [SerializeField] private Image logoAnimal;
 
 
     //Parâmetros fase:
@@ -50,17 +50,9 @@ public class GerenciaJogo : MonoBehaviour
     //Itens especiais
 
 
-    private static string[] numerosPorExtenso = {
-                    "Um", "Dois", "Três", "Quatro", "Cinco",
-                    "Seis", "Sete", "Oito", "Nove", "Dez", "Onze",
-                    "Doze","Treze","Quatorze","Quinze","Dezesseis",
-                    "Dezessete","Dezoito","Dezenove","Vinte"
-                    };
-    
-
-
     void Start()
     {
+      
         System.Random genRand = new System.Random();
         //Inicializando parâmetros.
         itens_clique = 0;
@@ -74,28 +66,32 @@ public class GerenciaJogo : MonoBehaviour
         if(itens_clicarMax_static != 1)
         {
             textoHud.text = "Selecione "
-            + numerosPorExtenso[itens_clicarMax_static - 1]
+            + itens_clicarMax_static
             + " animais!";
         }
         else
         {
             textoHud.text = "Selecione "
-            + numerosPorExtenso[itens_clicarMax_static - 1]
+            + itens_clicarMax_static
             +  " animal!";
         }
-        
+
+
+        tutorialTexto.text = "Toque nos animais para selecioná-los!";
         this.configurarSprites();
     }
 
   
-    public static void passarFase()
+    public static async void passarFase()
     {
-
-        ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral", gameObject_static);
+        ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral",gameObject_static);
+        Debug.Log("ItensCLique:" + itens_clique);
+  
         if (itens_clique == itens_clicarMax_static)
         {
+            await Task.Delay(200);
             reprodutor.reproduzirArquivo("muito_bem");
-            reprodutor.reproduzirArquivo("sound_acerto");
+            await Task.Delay(2000);
             SceneManager.LoadScene(cenaProxNome_static);
             itens_clique = 0;
             return;
@@ -124,6 +120,7 @@ public class GerenciaJogo : MonoBehaviour
         {
             itens[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(spriteParaCarregar_Animal);
         }
+        logoAnimal.sprite = itens[0].GetComponent<Image>().sprite;
     }
 
 }
