@@ -15,12 +15,25 @@ using System.Threading.Tasks;
  *  Paisagem;
  */
 
+/*
+ 
+Fases
+    Fase 1 - contar até 10
+    Fase  2 - até 10 aleatório (5 telas)
+    Fase  3 - de 11 a 20 - (sequencial)
+    Fase 4 - de 1 a 20 (5 telas)
+ */
+
 
 public class GerenciaJogo : MonoBehaviour
 {
+    // Constantes!
+    const string mensagemTutorialTexto = "Selecione a quantidade correta indicada!";
+
+
     // Configuração do HUD
 
-    [SerializeField] private Text textoHud;
+    [SerializeField] private Text nroHud;
     [SerializeField] private Text tutorialTexto;
     [SerializeField] private Image logoAnimal;
 
@@ -46,10 +59,6 @@ public class GerenciaJogo : MonoBehaviour
     [SerializeField] private string spriteParaCarregar_Animal;
 
 
-
-    //Itens especiais
-
-
     void Start()
     {
       
@@ -61,23 +70,12 @@ public class GerenciaJogo : MonoBehaviour
         cenaProxNome_static = cenaProxNome;
         gameObject_static = this.gameObject;
         itens_clicarMax_static = itens_clicarMax;
-        // textoHud_static = this.textoHud;
+        // textoHud_static = this.nroHud;
 
-        if(itens_clicarMax_static != 1)
-        {
-            textoHud.text = "Selecione "
-            + itens_clicarMax_static
-            + " animais!";
-        }
-        else
-        {
-            textoHud.text = "Selecione "
-            + itens_clicarMax_static
-            +  " animal!";
-        }
+        nroHud.text = itens_clicarMax.ToString();
 
 
-        tutorialTexto.text = "Toque nos animais para selecioná-los!";
+        tutorialTexto.text = mensagemTutorialTexto;
         this.configurarSprites();
     }
 
@@ -122,5 +120,4 @@ public class GerenciaJogo : MonoBehaviour
         }
         logoAnimal.sprite = itens[0].GetComponent<Image>().sprite;
     }
-
 }

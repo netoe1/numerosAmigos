@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,5 +21,12 @@ public class redirectBtn : MonoBehaviour
     public void passarDeFase()
     {
         GerenciaJogo.passarFase();
+    }
+
+    public void tocarAudio(string qtd)
+    {
+        ReprodutorSom rp = new ReprodutorSom("Sounds/Contagem",this.gameObject);
+        rp.reproduzirArquivo(qtd);
+        
     }
 }

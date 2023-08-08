@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8566903345694159914, guid: 6ff2b4a0bb0d2374793a67a3207932f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 78c59e61dcba2944e84f5847ffb9c2e7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -489,7 +493,7 @@ PrefabInstance:
     - target: {fileID: 1050566032438638739, guid: d31da9442bbc60f42935653f68b682b8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1008702460, guid: 90bd8520fa159c843aaaa91153f994e5, type: 3}
+      objectReference: {fileID: 21300000, guid: 3ff24c43cba38304dab58ab9e957fa50, type: 3}
     - target: {fileID: 2091897938817597463, guid: d31da9442bbc60f42935653f68b682b8, type: 3}
       propertyPath: m_Name
       value: btn_voltar
@@ -579,24 +583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679acb602c426854f8e63d39ddc86b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1055694072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055694066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f938b4e38c7ee5c48a18732359739f6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cenaAtualNome: fazenda_1
-  cenaProxNome: fazenda_2
-  itens: []
-  background: {fileID: 0}
-  spriteParaCarregar_Animal: 
-  spriteParaCarregar_Background: 
 --- !u!1001 &1503380897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -766,7 +752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1827e4cd5ac63ca4391d3b630136d5ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd43a3aa4f0fc5f4da7b70e0680f7afa, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -932,9 +918,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2810582651630293958, guid: e548dfdd6370cbc4dbebdd3e13047937, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1055694071}
-    - targetCorrespondingSourceObject: {fileID: 2810582651630293958, guid: e548dfdd6370cbc4dbebdd3e13047937, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1055694072}
   m_SourcePrefab: {fileID: 100100000, guid: e548dfdd6370cbc4dbebdd3e13047937, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
