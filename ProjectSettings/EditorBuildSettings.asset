@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fases/Fazenda/fazendaFase5.unity
     guid: 945fcf5b1d576be428b0df914182d7b0
+  - enabled: 1
+    path: Assets/Scenes/Fases/Fazenda/fazendaFase6.unity
+    guid: a6f133c5666112f4c972e57ebadd1ca1
+  - enabled: 1
+    path: Assets/Scenes/Fases/Fazenda/fazendaFase8.unity
+    guid: 70fbc0e1e58ceb1498885c094572eee6
+  - enabled: 1
+    path: Assets/Scenes/Fases/Fazenda/fazendaFase9.unity
+    guid: 3d43dcc029cff4e4ba8f0e2cc23fa7c8
+  - enabled: 1
+    path: Assets/Scenes/Fases/Fazenda/fazendaFase10.unity
+    guid: 5020bc4347ae1c144b9bf208f587e27b
   m_configObjects: {}

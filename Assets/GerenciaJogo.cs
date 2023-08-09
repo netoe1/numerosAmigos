@@ -1,24 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
-using UnityEditor;
-
-/*  Tipos de fase válidos:
- *  Ceu;
- *  Agua;
- *  Egito;
- *  Fazenda;
- *  FlorestaFadas;
- *  Mar;
- *  Paisagem;
- */
 
 /*
  
-Fases
+Fases: Anotação do Mrs Siedler
     Fase 1 - contar até 10
     Fase  2 - até 10 aleatório (5 telas)
     Fase  3 - de 11 a 20 - (sequencial)
@@ -34,7 +22,6 @@ public class GerenciaJogo : MonoBehaviour
 
 
     // Configuração do HUD
-    [SerializeField] private GameObject objetoPai_instanciar;
     [SerializeField] private Text nroHud;
     [SerializeField] private Text tutorialTexto;
     [SerializeField] private Image logoAnimal;
@@ -49,7 +36,7 @@ public class GerenciaJogo : MonoBehaviour
     private static int itens_clicarMax_static;
 
     //GameObjects Load
-    List<GameObject> itens;
+    List<GameObject> itens = new List<GameObject>();
 
     //Variáveis de acesso externo:
     private static string cenaProxNome_static;
@@ -127,14 +114,11 @@ public class GerenciaJogo : MonoBehaviour
 
     private void adicionandoComponentes()
     {
-        List<GameObject> todosFilhos = objetoPai_instanciar.GetComponentsInChildren<GameObject>();
-        
-        for(int i = 0; i < todosFilhos.Length;i++)
+        GameObject[] todosFilhos = GameObject.FindGameObjectsWithTag(tagInstanciar);
+        foreach(GameObject item in todosFilhos)
         {
-            if (todosFilhos[i].tag == tagInstanciar)
-            {
-                itens.Add(todosFilhos[i]);
-            }
+            itens.Add(item);
         }
+    }
     
 }
