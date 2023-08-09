@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 2
-  m_AspectRatio: 1
+  m_AspectRatio: 2
 --- !u!1001 &2000509247
 PrefabInstance:
   m_ObjectHideFlags: 0
