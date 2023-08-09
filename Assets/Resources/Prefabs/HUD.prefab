@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4764995451985398647}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: textoInstanciar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,6 +421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogoAnimal
       objectReference: {fileID: 0}
+    - target: {fileID: 7860204512112503664, guid: 1cd814f93ef1aca4dab5aff3e147c013, type: 3}
+      propertyPath: m_TagString
+      value: logoAnimal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -521,6 +525,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7860204512112503664, guid: 1cd814f93ef1aca4dab5aff3e147c013, type: 3}
       propertyPath: m_Name
+      value: LogoNro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860204512112503664, guid: 1cd814f93ef1aca4dab5aff3e147c013, type: 3}
+      propertyPath: m_TagString
       value: LogoNro
       objectReference: {fileID: 0}
     m_RemovedComponents: []
