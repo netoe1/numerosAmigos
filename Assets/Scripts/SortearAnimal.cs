@@ -9,18 +9,31 @@ public class SortearAnimal
 
     private List<string> animaisFazenda = new List<string>();
     private List<string> animaisAquatico = new List<string>();
-    private List<string> animaisAntartica = new List<string>();
+    private List<string> animaisArtico = new List<string>();
+    private List<string> animaisEspaco = new List<string>();
+    private List<string> animaisEgito = new List<string>();
+    private List<string> animaisMar = new List<string>();
 
     private List<string> animaisSorteadosFazenda = new List<string>();
     private List<string> animaisSorteadosAquatico = new List<string>();
-    private List<string> animaisSorteadosAntartica = new List<string>();
+    private List<string> animaisSorteadosartico = new List<string>();
+    private List<string> animaisSorteadosEspaco = new List<string>();
+    private List<string> animaisSorteadosEgito = new List<string>();
+    private List<string> animaisSorteadosMar = new List<string>();
+
 
     public string sortearAnimal(string tipoAmbiente)
     {
 
+        animaisSorteadosFazenda.Clear();
+        animaisSorteadosAquatico.Clear();
+        animaisSorteadosartico.Clear();
+        animaisSorteadosEspaco.Clear();
+        animaisSorteadosEgito.Clear();
+        animaisSorteadosMar.Clear();
         System.Random rnd = new System.Random();
         string aux = "undefined";
-
+    
 
         switch (tipoAmbiente.ToLower())
         {
@@ -41,21 +54,21 @@ public class SortearAnimal
                 Debug.Log(aux);
 
                 break;
-            case "antartica":
+            case "artico":
 
                 do
                 {
-                    aux = animaisAntartica[rnd.Next(0, animaisAntartica.Count - 1)].ToLower();
+                    aux = animaisArtico[rnd.Next(0, animaisArtico.Count - 1)].ToLower();
                 }
-                while (animaisSorteadosAntartica.Count < animaisAntartica.Count && animaisSorteadosAntartica.Contains(aux));
+                while (animaisSorteadosartico.Count < animaisArtico.Count && animaisSorteadosartico.Contains(aux));
 
-                if (animaisSorteadosAntartica.Count == animaisAntartica.Count)
+                if (animaisSorteadosartico.Count == animaisArtico.Count)
                 {
-                    animaisSorteadosAntartica.Clear();
+                    animaisSorteadosartico.Clear();
                 }
 
                 ultimoSorteado = aux;
-                animaisSorteadosAntartica.Add(aux);
+                animaisSorteadosartico.Add(aux);
                 Debug.Log(aux);
 
                 break;
@@ -76,6 +89,61 @@ public class SortearAnimal
                 animaisSorteadosAquatico.Add(aux);
                 Debug.Log(aux);
 
+                break;
+
+            case "egito":
+
+                do
+                {
+                    aux = animaisEgito[rnd.Next(0, animaisEgito.Count - 1)].ToLower();
+                }
+                while (animaisSorteadosEgito.Count < animaisEgito.Count && animaisSorteadosEgito.Contains(aux));
+
+                if (animaisSorteadosEgito.Count == animaisEgito.Count)
+                {
+                    animaisSorteadosEgito.Clear();
+                }
+
+                ultimoSorteado = aux;
+                animaisSorteadosEgito.Add(aux);
+                Debug.Log(aux);
+
+                break;
+
+            case "mar":
+
+                do
+                {
+                    aux = animaisMar[rnd.Next(0, animaisMar.Count - 1)].ToLower();
+                }
+                while (animaisSorteadosMar.Count < animaisMar.Count && animaisSorteadosMar.Contains(aux));
+
+                if (animaisSorteadosMar.Count == animaisMar.Count)
+                {
+                    animaisSorteadosMar.Clear();
+                }
+
+                ultimoSorteado = aux;
+                animaisSorteadosMar.Add(aux);
+                Debug.Log(aux);
+
+                break;
+
+            case "espaco":
+
+                do
+                {
+                    aux = animaisEspaco[rnd.Next(0, animaisEspaco.Count - 1)].ToLower();
+                }
+                while (animaisSorteadosEspaco.Count < animaisEspaco.Count && animaisSorteadosEspaco.Contains(aux));
+
+                if (animaisSorteadosEspaco.Count == animaisEspaco.Count)
+                {
+                    animaisSorteadosEspaco.Clear();
+                }
+                ultimoSorteado = aux;
+                animaisSorteadosEspaco.Add(aux);
+                Debug.Log(aux);
                 break;
             default:
                 Debug.LogError("Erro no switch do algoritmo sortear animal!");
@@ -101,10 +169,10 @@ public class SortearAnimal
                 }
                 cb = true;
                 break;
-            case "antartica":
-                if (!this.animaisAntartica.Contains(str_animal.ToLower()))
+            case "artico":
+                if (!this.animaisArtico.Contains(str_animal.ToLower()))
                 {
-                    this.animaisAntartica.Add(str_animal.ToLower());
+                    this.animaisArtico.Add(str_animal.ToLower());
                     return;
                 }
                 cb = true;
@@ -113,6 +181,32 @@ public class SortearAnimal
                 if (!this.animaisFazenda.Contains(str_animal.ToLower()))
                 {
                     this.animaisFazenda.Add(str_animal.ToLower());
+                    return;
+                }
+                cb = true;
+                break;
+
+            case "egito":
+                if (!this.animaisEgito.Contains(str_animal.ToLower()))
+                {
+                    this.animaisEgito.Add(str_animal.ToLower());
+                    return;
+                }
+                cb = true;
+                break;
+
+            case "mar":
+                if (!this.animaisMar.Contains(str_animal.ToLower()))
+                {
+                    this.animaisMar.Add(str_animal.ToLower());
+                    return;
+                }
+                cb = true;
+                break;
+            case "espaco":
+                if (!this.animaisEspaco.Contains(str_animal.ToLower()))
+                {
+                    this.animaisEspaco.Add(str_animal.ToLower());
                     return;
                 }
                 cb = true;
@@ -132,9 +226,12 @@ public class SortearAnimal
     {
 
 
-        string[] padraoFazenda = { "Abelha", "Galinha", "Galo", "Pinto" };
-        string[] padraoAntartica = { "Pinguim", "Leao_marinho" };
-        string[] padraoAquatico = { "Polvo", "Peixe_espada" };
+        string[] padraoFazenda = { "Abelha", "Galinha", "Galo", "Pinto","Vaca","Ovelha"};
+        string[] padraoArtico = { "Pinguim", "Leao_marinho" };
+        string[] padraoAquatico = { "Polvo", "Peixe_espada","peixe_espada_2" };
+        string[] padraoEgito = { "Mumia" };
+        string[] padraoEspaco = { "et_amarelo", "et_verde", "et_vermelho" };
+        string[] padraoMar = { "peixe_espada","peixe_espada_2","polvo" };
 
         switch (tipoAmbiente.ToLower())
         {
@@ -147,21 +244,51 @@ public class SortearAnimal
                     }
                 }
                 break;
-            case "antartica":
-                for (int i = 0; i < padraoAntartica.Length; i++)
+            case "artico":
+                for (int i = 0; i < padraoArtico.Length; i++)
                 {
-                    if (!animaisAntartica.Contains(padraoAntartica[i].ToLower()))
+                    if (!animaisArtico.Contains(padraoArtico[i].ToLower()))
                     {
-                        animaisAntartica.Add(padraoAntartica[i]);
+                        animaisArtico.Add(padraoArtico[i]);
                     }
                 }
                 break;
             case "fazenda":
-                for (int i = 0; i < padraoAntartica.Length; i++)
+                for (int i = 0; i < padraoFazenda.Length; i++)
                 {
                     if (!animaisFazenda.Contains(padraoFazenda[i].ToLower()))
                     {
                         animaisFazenda.Add(padraoFazenda[i]);
+                    }
+                }
+                break;
+
+            case "espaco":
+                for (int i = 0; i < padraoEspaco.Length; i++)
+                {
+                    if (!animaisEspaco.Contains(padraoEspaco[i].ToLower()))
+                    {
+                        animaisEspaco.Add(padraoEspaco[i]);
+                    }
+                }
+                break;
+
+            case "mar":
+                for (int i = 0; i < padraoMar.Length; i++)
+                {
+                    if (!animaisMar.Contains(padraoMar[i].ToLower()))
+                    {
+                        animaisMar.Add(padraoMar[i]);
+                    }
+                }
+                break;
+
+            case "egito":
+                for (int i = 0; i < padraoEgito.Length; i++)
+                {
+                    if (!animaisEgito.Contains(padraoEgito[i].ToLower()))
+                    {
+                        animaisEgito.Add(padraoEgito[i]);
                     }
                 }
                 break;
@@ -175,7 +302,7 @@ public class SortearAnimal
     public void clearAlL()
     {
         animaisFazenda.Clear();
-        animaisAntartica.Clear();
+        animaisArtico.Clear();
         animaisAquatico.Clear();
     }
 

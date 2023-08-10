@@ -81,7 +81,6 @@ public class CenaDinamica : MonoBehaviour
 
     /* Controlador de inicialização*/
 
-    int indice_repete_fase = 0;
     [SerializeField] private string nomeCena;
     [SerializeField] private string tipoFase;
     [SerializeField] private string proximaCena;
@@ -95,10 +94,11 @@ public class CenaDinamica : MonoBehaviour
     [SerializeField] private Text GetHud;
     [SerializeField] private List<GameObject> obj;
     [SerializeField] private static Text hud_text;
-    [SerializeField] private GameObject popup;
     [SerializeField] private Button botao_sair;
     [SerializeField] private Button botao_verificar;
     [SerializeField] private GameObject logo;
+    [SerializeField] private GameObject GetText;
+
 
     /*Objetos auxiliáres*/
 
@@ -110,7 +110,7 @@ public class CenaDinamica : MonoBehaviour
     void Start()
     {
 
-
+        GetText.GetComponent<Text>().text = "Selecione a quantidade correta!";
         
         // Criando os controladores auxiliares
 
@@ -191,37 +191,19 @@ public class CenaDinamica : MonoBehaviour
 
     async void verificarFase()
     {
-        const int tempoDelay = 1000;
+        const int tempoDelay = 2000;
         ReprodutorSom aux = new ReprodutorSom("Sounds/Geral", this.gameObject);
         Debug.Log("Clicados:" +itensClicados.itens_clicados);
         Debug.Log("Limite:" + itensClicados.itens_limite_fase);
         if (itensClicados.itens_clicados == itensClicados.LIMITE_CLICAR)
         {
-            if (indice_repete_fase != 2)
-            {
-                ctrlFase.acrescentarFase();
-                indice_repete_fase++;
-                await Task.Delay(tempoDelay / 2);
-                aux.reproduzirArquivo("muito_bem");
-                await Task.Delay(tempoDelay);
-                return;
-            }
-
-            indice_repete_fase = 0;
-
-            if (proximaCena != null)
-            {
-
-
-                SceneManager.LoadScene(proximaCena);
-                return;
-            }
-
-            Debug.Log("Passar de fase!");
+            ctrlFase.acrescentarFase();
+            aux.reproduzirArquivo("muito_bem");
+            await Task.Delay(tempoDelay);
+            SceneManager.LoadScene(proximaCena);
             return;
-
+           
         }
-        await Task.Delay(tempoDelay / 2);
         aux.reproduzirArquivo("tentar_novamente");
         await Task.Delay(tempoDelay);
         return;
