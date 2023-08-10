@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class ReprodutorSom
@@ -15,7 +14,7 @@ public class ReprodutorSom
         this.gameObject_atrelado = __gameObject;
     }
 
-    public async void reproduzirArquivo(string filename)
+    public void reproduzirArquivo(string filename)
     {
         audioSource = gameObject_atrelado.GetComponent<AudioSource>();
         if (audioSource != null)
@@ -25,7 +24,6 @@ public class ReprodutorSom
             if (audioSource.clip != null)
             {
                 audioSource.Play();
-                await Task.Delay(Mathf.RoundToInt(audioSource.clip.length) * 1000);
             }
             else
             {
