@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/menu2.unity
     guid: 13baaea944934df4b9f012fa5f4c7dd2
   - enabled: 1
-    path: Assets/Scenes/Fases/Fazenda/fazendaFase1.unity
+    path: Assets/Scenes/Fases/FaseEstatica 1 a 10/fazendaFase1.unity
     guid: fa7eef6139af5874283dbbd47a1aeb3f
   - enabled: 1
     path: Assets/Scenes/Fases/Fazenda/fazendaFase2.unity
@@ -24,22 +24,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Fases/Fazenda/fazendaFase4.unity
     guid: a4f80fae2da2d324dbda780bcb3cd640
   - enabled: 1
-    path: Assets/Scenes/Fases/Fazenda/fazendaFase5.unity
+    path: Assets/Scenes/Fases/FaseEstatica 1 a 10/fazendaFase5.unity
     guid: 945fcf5b1d576be428b0df914182d7b0
   - enabled: 1
-    path: Assets/Scenes/Fases/Fazenda/fazendaFase6.unity
+    path: Assets/Scenes/Fases/FaseEstatica 1 a 10/fazendaFase6.unity
     guid: a6f133c5666112f4c972e57ebadd1ca1
   - enabled: 1
-    path: Assets/Scenes/Fases/Fazenda/fazendaFase7.unity
+    path: Assets/Scenes/Fases/FaseEstatica 1 a 10/fazendaFase7.unity
     guid: 567aca1c9b3431f47b6ab0a1c865b36b
   - enabled: 1
-    path: Assets/Scenes/Fases/Fazenda/fazendaFase8.unity
+    path: Assets/Scenes/Fases/FaseEstatica 1 a 10/fazendaFase8.unity
     guid: 70fbc0e1e58ceb1498885c094572eee6
   - enabled: 1
-    path: Assets/Scenes/Fases/Fazenda/fazendaFase9.unity
+    path: Assets/Scenes/Fases/FaseEstatica 1 a 10/fazendaFase9.unity
     guid: 3d43dcc029cff4e4ba8f0e2cc23fa7c8
   - enabled: 1
-    path: Assets/Scenes/Fases/Fazenda/fazendaFase10.unity
+    path: Assets/Scenes/Fases/FaseEstatica 1 a 10/fazendaFase10.unity
     guid: 5020bc4347ae1c144b9bf208f587e27b
   - enabled: 1
     path: Assets/Scenes/Fases/FaseDinamica/FaseDinamica1.unity
@@ -56,4 +56,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fases/FaseDinamica/FaseDinamica5.unity
     guid: 0c9c658e981b87648a2f77eaa087ccce
+  - enabled: 1
+    path: Assets/Scenes/Fases/FaseDinamica1a20/FaseDinamica2_1.unity
+    guid: 1c66d111f4bdbd14badcadf9b4fac011
+  - enabled: 1
+    path: Assets/Scenes/Fases/FaseDinamica1a20/FaseDinamica2_2.unity
+    guid: b0823f1afff0b7f4ea8bd94bd4252aad
+  - enabled: 1
+    path: Assets/Scenes/Fases/FaseDinamica1a20/FaseDinamica2_3.unity
+    guid: ac44081d80da7e54f9a760e8748700be
+  - enabled: 1
+    path: Assets/Scenes/Fases/FaseDinamica1a20/FaseDinamica2_4.unity
+    guid: 6079dec5315deea468fd6eedf4ac70b0
+  - enabled: 1
+    path: Assets/Scenes/Fases/FaseDinamica1a20/FaseDinamica2_5.unity
+    guid: afa1de6c29263a9469dc80b11172806a
+  - enabled: 1
+    path: Assets/Scenes/TelaMuitoBem.unity
+    guid: 908c7465240477a48ae0dc173f5ae0b8
   m_configObjects: {}

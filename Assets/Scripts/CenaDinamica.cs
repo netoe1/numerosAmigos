@@ -185,7 +185,7 @@ public class CenaDinamica : MonoBehaviour
     {
         int retorno;
         System.Random rnd = new System.Random();
-        retorno = rnd.Next(obj.Count / 2, obj.Count);
+        retorno = rnd.Next(1, obj.Count);
         return retorno;
     }
 
