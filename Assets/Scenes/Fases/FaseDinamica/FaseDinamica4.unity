@@ -738,11 +738,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7552347651442126131, guid: 6ff2b4a0bb0d2374793a67a3207932f6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7552347651442126131, guid: 6ff2b4a0bb0d2374793a67a3207932f6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7552347651442126131, guid: 6ff2b4a0bb0d2374793a67a3207932f6, type: 3}
       propertyPath: m_AnchorMin.x
@@ -754,11 +754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7552347651442126131, guid: 6ff2b4a0bb0d2374793a67a3207932f6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 923.04
       objectReference: {fileID: 0}
     - target: {fileID: 7552347651442126131, guid: 6ff2b4a0bb0d2374793a67a3207932f6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 664.78
       objectReference: {fileID: 0}
     - target: {fileID: 7552347651442126131, guid: 6ff2b4a0bb0d2374793a67a3207932f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1017,11 +1017,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4611819192284797208, guid: 9e478c186652c4d4c89ef230eef8d34b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00030517578
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 4611819192284797208, guid: 9e478c186652c4d4c89ef230eef8d34b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -126.50998
+      value: -126.51001
       objectReference: {fileID: 0}
     - target: {fileID: 4611819192284797208, guid: 9e478c186652c4d4c89ef230eef8d34b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1782,8 +1782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AspectMode: 4
-  m_AspectRatio: 4
+  m_AspectMode: 0
+  m_AspectRatio: 1.6036427
 --- !u!1001 &1718593621
 PrefabInstance:
   m_ObjectHideFlags: 0
