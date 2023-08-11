@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 03cf5c2788bf5ea478ee752681e399ea
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bricolage Grotesque
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c06b5dc29b97e5b4cb3d227cd9846ad5, type: 3}
+  - {fileID: 12800000, guid: 2281aaf929d380b4aa2889fa665acd59, type: 3}
+  - {fileID: 12800000, guid: 008de53f472b1ab44be80b3634a61ceb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

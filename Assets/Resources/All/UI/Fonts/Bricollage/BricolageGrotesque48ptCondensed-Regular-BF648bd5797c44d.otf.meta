@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: e38f83efc9dd5164cbf1b6c2a766e350
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bricolage Grotesque 48pt Condensed
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 011a893a2226ee9459cbb1846d34165e, type: 3}
+  - {fileID: 12800000, guid: 8204f40f681766c47af74bdc74ca227e, type: 3}
+  - {fileID: 12800000, guid: 839e268d1e4c8094daec696305cca8d2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

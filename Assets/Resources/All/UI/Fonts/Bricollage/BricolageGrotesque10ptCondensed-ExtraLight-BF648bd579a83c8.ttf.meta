@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: f9411e183d238b24ebdc0507b6e1c8c9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bricolage Grotesque 10pt Condensed
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 051ca9ca9ef36b3469e363e390dbd657, type: 3}
+  - {fileID: 12800000, guid: 8433bb0a2aa22304caa348d47c3db5da, type: 3}
+  - {fileID: 12800000, guid: c49d104e568001945bd472314975f806, type: 3}
+  - {fileID: 12800000, guid: a7d132a76dc4b63449dfa0fd70d05ae2, type: 3}
+  - {fileID: 12800000, guid: c1d2c6d907d1cc6419b54d257cbb46f2, type: 3}
+  - {fileID: 12800000, guid: c9ac5493ca76b674ebc652b37ea8e610, type: 3}
+  - {fileID: 12800000, guid: a1c8091524c071c46a963f0773ae2c4b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
