@@ -567,9 +567,9 @@ MonoBehaviour:
   nroHud: {fileID: 866896267}
   tutorialTexto: {fileID: 354881818}
   logoAnimal: {fileID: 54461757}
-  cenaAtualNome: FaseEstatica2_9
-  cenaProxNome: FaseEstatica2_10
-  itens_clicarMax: 19
+  cenaAtualNome: FaseEstatica2_8
+  cenaProxNome: FaseEstatica2_9
+  itens_clicarMax: 18
   spriteParaCarregar_Animal: All/Sprites/Animais/Espaco/et_amarelo
 --- !u!1001 &331890985
 PrefabInstance:
