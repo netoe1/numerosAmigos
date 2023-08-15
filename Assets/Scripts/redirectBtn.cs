@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class redirectBtn : MonoBehaviour
 {
+
+    private bool reproduzirSom_resUi = false;
     public void fecharJogo()
     {
         Application.Quit();
@@ -28,5 +30,11 @@ public class redirectBtn : MonoBehaviour
         ReprodutorSom rp = new ReprodutorSom("Sounds/Contagem",this.gameObject);
         rp.reproduzirArquivo(qtd);
         
+    }
+
+    public void tocarAudio_resUI()
+    {
+        ReprodutorSom rp = new ReprodutorSom("Sounds/Geral", this.gameObject);
+        rp.reproduzirArquivo("sound_acerto");
     }
 }

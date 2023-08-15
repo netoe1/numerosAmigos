@@ -561,6 +561,8 @@ MonoBehaviour:
   nroHud: {fileID: 866896267}
   tutorialTexto: {fileID: 354881818}
   logoAnimal: {fileID: 54461757}
+  passarDeFase_btn: {fileID: 953800325}
+  voltarMenu_btn: {fileID: 5062202405336059911}
   cenaAtualNome: FaseEstatica2_7
   cenaProxNome: FaseEstatica2_8
   itens_clicarMax: 17
@@ -1615,6 +1617,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 96372192260055690, guid: d31da9442bbc60f42935653f68b682b8, type: 3}
   m_PrefabInstance: {fileID: 953800323}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &953800325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7728840401355642492, guid: d31da9442bbc60f42935653f68b682b8, type: 3}
+  m_PrefabInstance: {fileID: 953800323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1085168263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3673,6 +3686,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1570425207}
   m_SourcePrefab: {fileID: 100100000, guid: 9e478c186652c4d4c89ef230eef8d34b, type: 3}
+--- !u!114 &5062202405336059911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1833722800559190516, guid: 9e478c186652c4d4c89ef230eef8d34b, type: 3}
+  m_PrefabInstance: {fileID: 5062202405336059910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

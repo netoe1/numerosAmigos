@@ -75,6 +75,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TelaMuitoBem.unity
     guid: 908c7465240477a48ae0dc173f5ae0b8
   - enabled: 1
+    path: Assets/Scenes/Fases/FaseEstatica 10 a 20/FaseEstatica2_0.unity
+    guid: 09c0ee2701e7c8948934382fc34e981d
+  - enabled: 1
     path: Assets/Scenes/Fases/FaseEstatica 10 a 20/FaseEstatica2_1.unity
     guid: e146bcd6f2db3674b8348acaddf40c89
   - enabled: 1

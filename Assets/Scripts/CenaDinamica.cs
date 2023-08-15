@@ -79,6 +79,8 @@ public class ControllerItensClicados
 public class CenaDinamica : MonoBehaviour
 {
 
+    private static bool permitirPassarFase;
+
     /* Controlador de inicialização*/
 
     [SerializeField] private string nomeCena;
@@ -96,8 +98,9 @@ public class CenaDinamica : MonoBehaviour
     [SerializeField] private static Text hud_text;
     [SerializeField] private Button botao_sair;
     [SerializeField] private Button botao_verificar;
+    [SerializeField] private Button botao_qtdNumeros;
     [SerializeField] private GameObject logo;
-    [SerializeField] private GameObject GetText;
+    [SerializeField] private GameObject textoTutorial;
 
 
     /*Objetos auxiliáres*/
@@ -107,22 +110,34 @@ public class CenaDinamica : MonoBehaviour
     private ConfigurarFase ctrlFase;
     private SpritePath path_sprites;
 
+    //  Objetos Privados!
+
+    ReprodutorSom rs_cliqueBotao;
+
     void Start()
     {
-
-        GetText.GetComponent<Text>().text = "Selecione a quantidade correta!";
+        //  Configurando clicar do botão!
+        rs_cliqueBotao = new ReprodutorSom("Sounds/Contagem",this.gameObject);
+        permitirPassarFase = true;
+        textoTutorial.GetComponent<Text>().text = "Selecione a quantidade correta!";
         
         // Criando os controladores auxiliares
 
         ctrlFase = new ConfigurarFase(1, nomeCena);
         path_sprites = new SpritePath("All/Sprites/Animais/" + tipoFase, null, "Selecionar Animais");
 
-        // Adicionar escuta ao botão
+        // Configurando botões
 
         botao_verificar.onClick.AddListener(delegate ()
         {
             verificarFase();
         });
+        botao_qtdNumeros.onClick.AddListener(delegate ()
+        {
+            rs_cliqueBotao.reproduzirArquivo(itensClicados.LIMITE_CLICAR.ToString());
+        });
+    
+
 
 
         gameobject_ext = this.gameObject;
@@ -144,7 +159,7 @@ public class CenaDinamica : MonoBehaviour
         path_sprites.spriteLog();
         controllerLog();
 
-        hud_text.text =itensClicados.LIMITE_CLICAR.ToString();
+        hud_text.text = itensClicados.LIMITE_CLICAR.ToString();
 
     }
     /*
@@ -195,12 +210,13 @@ public class CenaDinamica : MonoBehaviour
         ReprodutorSom aux = new ReprodutorSom("Sounds/Geral", this.gameObject);
         Debug.Log("Clicados:" +itensClicados.itens_clicados);
         Debug.Log("Limite:" + itensClicados.itens_limite_fase);
-        if (itensClicados.itens_clicados == itensClicados.LIMITE_CLICAR)
+        if (itensClicados.itens_clicados == itensClicados.LIMITE_CLICAR && permitirPassarFase)
         {
             ctrlFase.acrescentarFase();
             aux.reproduzirArquivo("muito_bem");
             await Task.Delay(tempoDelay);
             SceneManager.LoadScene(proximaCena);
+            permitirPassarFase = false;
             return;
            
         }

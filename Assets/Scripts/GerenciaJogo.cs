@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
+using UnityEngine.Android;
 
 /*
  
@@ -19,13 +20,14 @@ public class GerenciaJogo : MonoBehaviour
     // Constantes!
     const string mensagemTutorialTexto = "Selecione a quantidade correta indicada!";
     const string tagInstanciar = "instanciar";
-
+    private static bool permitirPassarCena = true;
 
     // Configuração do HUD
     [SerializeField] private Text nroHud;
     [SerializeField] private Text tutorialTexto;
     [SerializeField] private Image logoAnimal;
-
+    [SerializeField] private Button passarDeFase_btn;
+    [SerializeField] private Button voltarMenu_btn;
 
     //Parâmetros fase:
     [SerializeField] private string cenaAtualNome;
@@ -50,6 +52,19 @@ public class GerenciaJogo : MonoBehaviour
 
     void Start()
     {
+        //Configurando botões:
+        this.passarDeFase_btn.onClick.AddListener(delegate ()
+        {
+            passarFase();
+        });
+
+        this.voltarMenu_btn.onClick.AddListener(delegate ()
+        {
+            SceneManager.LoadScene("menu2");
+        });
+
+        permitirPassarCena = true;
+
         // Reconhecendo os itens sozinho!
         adicionandoComponentes();
         System.Random genRand = new System.Random();
@@ -75,23 +90,22 @@ public class GerenciaJogo : MonoBehaviour
         ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral",gameObject_static);
         Debug.Log("ItensCLique:" + itens_clique);
   
-        if (itens_clique == itens_clicarMax_static)
+        if (itens_clique == itens_clicarMax_static && permitirPassarCena)
         {
             await Task.Delay(200);
             reprodutor.reproduzirArquivo("muito_bem");
             await Task.Delay(2000);
             SceneManager.LoadScene(cenaProxNome_static);
             itens_clique = 0;
+            permitirPassarCena = false;
             return;
         }
         reprodutor.reproduzirArquivo("tentar_novamente");
-
     }
 
     public static void acrescentarClique()
     {
         ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral",gameObject_static);
-      
         reprodutor.reproduzirArquivo("sound_acerto");
         itens_clique++;
     }

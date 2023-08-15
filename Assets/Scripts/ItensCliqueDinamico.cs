@@ -54,7 +54,6 @@ public class ItensCliqueDinamico :
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Item cliado!");
-            ReprodutorSom rp = new ReprodutorSom("Sounds/Geral",this.gameObject);
                 
             item_clicado = !item_clicado;
             if (item_clicado)
@@ -62,7 +61,6 @@ public class ItensCliqueDinamico :
                 this.gameObject.GetComponent<Image>().color = UnityEngine.Color.white;
                 this.gameObject.GetComponent<RectTransform>().localScale = new Vector3(default_scale * amount_of_scale, default_scale * amount_of_scale, default_scale * amount_of_scale);
                 CenaDinamica.external_adicionarClicado();
-                rp.reproduzirArquivo("sound_acerto");
             }
             else
             {
