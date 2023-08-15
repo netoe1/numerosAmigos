@@ -550,7 +550,7 @@ MonoBehaviour:
   voltarMenu_btn: {fileID: 5062202405336059911}
   cenaAtualNome: FaseEstatica2_2
   cenaProxNome: FaseEstatica2_3
-  itens_clicarMax: 10
+  itens_clicarMax: 12
   spriteParaCarregar_Animal: All/Sprites/Animais/Fazenda/abelha
 --- !u!1001 &331890985
 PrefabInstance:
