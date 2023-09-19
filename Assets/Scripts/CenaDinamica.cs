@@ -74,8 +74,6 @@ public class ControllerItensClicados
     }
 
 }
-
-
 public class CenaDinamica : MonoBehaviour
 {
 
@@ -128,18 +126,9 @@ public class CenaDinamica : MonoBehaviour
 
         // Configurando botões
 
-        botao_verificar.onClick.AddListener(delegate ()
-        {
-            verificarFase();
-        });
-        botao_qtdNumeros.onClick.AddListener(delegate ()
-        {
-            rs_cliqueBotao.reproduzirArquivo(itensClicados.LIMITE_CLICAR.ToString());
-        });
-    
-
-
-
+        botao_verificar.onClick.AddListener(delegate (){verificarFase();});
+        botao_qtdNumeros.onClick.AddListener(delegate (){rs_cliqueBotao.reproduzirArquivo(itensClicados.LIMITE_CLICAR.ToString());});
+ 
         gameobject_ext = this.gameObject;
         hud_text = GetHud;
 
@@ -210,18 +199,30 @@ public class CenaDinamica : MonoBehaviour
         ReprodutorSom aux = new ReprodutorSom("Sounds/Geral", this.gameObject);
         Debug.Log("Clicados:" +itensClicados.itens_clicados);
         Debug.Log("Limite:" + itensClicados.itens_limite_fase);
-        if (itensClicados.itens_clicados == itensClicados.LIMITE_CLICAR && permitirPassarFase)
+
+        if (permitirPassarFase)
         {
-            ctrlFase.acrescentarFase();
-            aux.reproduzirArquivo("muito_bem");
-            await Task.Delay(tempoDelay);
-            SceneManager.LoadScene(proximaCena);
-            permitirPassarFase = false;
-            return;
-           
+            if (itensClicados.itens_clicados == itensClicados.LIMITE_CLICAR)
+            {
+                permitirPassarFase = false;
+                ctrlFase.acrescentarFase();
+                aux.reproduzirArquivo("muito_bem");
+                await Task.Delay(tempoDelay);
+                SceneManager.LoadScene(proximaCena);
+                return;
+
+            }
+            else
+            {
+             aux.reproduzirArquivo("tentar_novamente");
+             await Task.Delay(tempoDelay);
+            }
         }
-        aux.reproduzirArquivo("tentar_novamente");
-        await Task.Delay(tempoDelay);
+        else
+        {
+            Debug.LogWarning("Você já clicou pra passar de fase!");
+        }
+       
         return;
     }
 }

@@ -89,18 +89,30 @@ public class GerenciaJogo : MonoBehaviour
     {
         ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral",gameObject_static);
         Debug.Log("ItensCLique:" + itens_clique);
-  
-        if (itens_clique == itens_clicarMax_static && permitirPassarCena)
+
+        if (permitirPassarCena)
         {
-            await Task.Delay(200);
-            reprodutor.reproduzirArquivo("muito_bem");
-            await Task.Delay(2000);
-            SceneManager.LoadScene(cenaProxNome_static);
-            itens_clique = 0;
-            permitirPassarCena = false;
-            return;
+            if (itens_clique == itens_clicarMax_static)
+            {
+                permitirPassarCena = false;
+                await Task.Delay(200);
+                reprodutor.reproduzirArquivo("muito_bem");
+                await Task.Delay(2000);
+                SceneManager.LoadScene(cenaProxNome_static);
+                itens_clique = 0;
+                return;
+            }
+            else
+            {
+                reprodutor.reproduzirArquivo("tentar_novamente");
+            }
         }
-        reprodutor.reproduzirArquivo("tentar_novamente");
+        else
+        {
+            Debug.LogWarning("Você já clicou para passar de fase!");
+        }
+
+        
     }
 
     public static void acrescentarClique()
