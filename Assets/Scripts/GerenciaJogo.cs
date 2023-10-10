@@ -109,7 +109,7 @@ public class GerenciaJogo : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Você já clicou para passar de fase!");
+            Debug.Log("Você já clicou para passar de fase!");
         }
 
         

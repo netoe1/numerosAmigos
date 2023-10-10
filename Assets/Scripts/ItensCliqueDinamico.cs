@@ -35,6 +35,7 @@ public class ItensCliqueDinamico :
         // Configurando BoxCollider
 
         boxCollider.size =  new Vector2(this.gameObject.GetComponent<RectTransform>().rect.size.x * default_scale, this.gameObject.GetComponent<RectTransform>().rect.size.y * default_scale);
+        boxCollider.autoTiling = true;
     }
 
     void config_outline(bool enter)

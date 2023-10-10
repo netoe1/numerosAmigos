@@ -220,7 +220,7 @@ public class CenaDinamica : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Você já clicou pra passar de fase!");
+            Debug.Log("Você já clicou pra passar de fase!");
         }
        
         return;
