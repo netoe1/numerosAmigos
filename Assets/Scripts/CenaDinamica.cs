@@ -22,18 +22,12 @@ public class ControllerItensClicados
 
     public void removerItensClicados()
     {
-        if (itens_clicados - 1 >= 0)
-        {
-            itens_clicados--;
-        }
+        itens_clicados--;
     }
 
     public void acrescentarItensClicados()
     {
-        if (itens_clicados + 1 <= LIMITE_CLICAR)
-        {
-            itens_clicados++;
-        }
+        itens_clicados++;
     }
 
     public void verItensClicados()
