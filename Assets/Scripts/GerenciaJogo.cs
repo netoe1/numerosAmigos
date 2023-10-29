@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Threading.Tasks;
-using UnityEngine.Android;
+using System.Collections;
+
 
 /*
  
@@ -33,6 +33,8 @@ public class GerenciaJogo : MonoBehaviour
     [SerializeField] private string cenaAtualNome;
     [SerializeField] private string cenaProxNome;
     [SerializeField] private int itens_clicarMax;
+
+    private static string cenaProxNome_static;
     //Parâmetros controle fase
     private static int itens_clique;
     private static int itens_clicarMax_static;
@@ -41,7 +43,7 @@ public class GerenciaJogo : MonoBehaviour
     List<GameObject> itens = new List<GameObject>();
 
     //Variáveis de acesso externo:
-    private static string cenaProxNome_static;
+   // private static string cenaProxNome_static;
     private static GameObject gameObject_static;
     //public static Text textoHud_static;
 
@@ -85,20 +87,18 @@ public class GerenciaJogo : MonoBehaviour
     }
 
   
-    public static async void passarFase()
+    public static void passarFase()
     {
         ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral",gameObject_static);
         Debug.Log("ItensCLique:" + itens_clique);
-
+        GerenciaJogo instance = FindObjectOfType<GerenciaJogo>();
         if (permitirPassarCena)
         {
             if (itens_clique == itens_clicarMax_static)
             {
                 permitirPassarCena = false;
-                await Task.Delay(200);
                 reprodutor.reproduzirArquivo("muito_bem");
-                await Task.Delay(2000);
-                SceneManager.LoadScene(cenaProxNome_static);
+                instance.StartCoroutine(waitForSound(reprodutor.audioSource));
                 itens_clique = 0;
                 return;
             }
@@ -146,5 +146,16 @@ public class GerenciaJogo : MonoBehaviour
             itens.Add(item);
         }
     }
-    
+
+    private static IEnumerator waitForSound(AudioSource audio)
+    {
+        //Wait Until Sound has finished playing
+        while (audio.isPlaying)
+        {
+            yield return null;
+        }
+
+        SceneManager.LoadScene(cenaProxNome_static);
+    }
+
 }

@@ -722,6 +722,10 @@ PrefabInstance:
       value: btnAvancar
       objectReference: {fileID: 0}
     - target: {fileID: 7728840401355642492, guid: d31da9442bbc60f42935653f68b682b8, type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728840401355642492, guid: d31da9442bbc60f42935653f68b682b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}

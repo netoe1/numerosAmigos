@@ -5,7 +5,7 @@ public class ReprodutorSom
     public string PATHPASTA_AUDIOS { get; set; }
 
     private GameObject gameObject_atrelado;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private const float STD_VOLUME = 1.0f;
     public ReprodutorSom(string __path_audios, GameObject __gameObject)
@@ -16,7 +16,9 @@ public class ReprodutorSom
 
     public void reproduzirArquivo(string filename)
     {
+        
         audioSource = gameObject_atrelado.GetComponent<AudioSource>();
+
         if (audioSource != null)
         {
             //this.reprodutorAudioLog("O gameobject atrelado possui audiosource");

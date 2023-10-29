@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Threading.Tasks;
 using UnityEditor;
+using static Unity.VisualScripting.Member;
 
 public class ControllerItensClicados
 {
@@ -78,6 +79,7 @@ public class CenaDinamica : MonoBehaviour
     [SerializeField] private string nomeCena;
     [SerializeField] private string tipoFase;
     [SerializeField] private string proximaCena;
+    private static string proxCena_static;
 
     /*Variáveis auxiliares*/
     private static GameObject gameobject_ext;
@@ -108,6 +110,7 @@ public class CenaDinamica : MonoBehaviour
 
     void Start()
     {
+        proxCena_static = proximaCena;
         //  Configurando clicar do botão!
         rs_cliqueBotao = new ReprodutorSom("Sounds/Contagem",this.gameObject);
         permitirPassarFase = true;
@@ -186,10 +189,9 @@ public class CenaDinamica : MonoBehaviour
         retorno = rnd.Next(1, obj.Count);
         return retorno;
     }
-
-    async void verificarFase()
+   
+     void verificarFase()
     {
-        const int tempoDelay = 2000;
         ReprodutorSom aux = new ReprodutorSom("Sounds/Geral", this.gameObject);
         Debug.Log("Clicados:" +itensClicados.itens_clicados);
         Debug.Log("Limite:" + itensClicados.itens_limite_fase);
@@ -201,22 +203,36 @@ public class CenaDinamica : MonoBehaviour
                 permitirPassarFase = false;
                 ctrlFase.acrescentarFase();
                 aux.reproduzirArquivo("muito_bem");
-                await Task.Delay(tempoDelay);
-                SceneManager.LoadScene(proximaCena);
+                StartCoroutine(waitForSound(aux.audioSource));
                 return;
 
             }
             else
             {
-             aux.reproduzirArquivo("tentar_novamente");
-             await Task.Delay(tempoDelay);
+                aux.reproduzirArquivo("tentar_novamente");
             }
         }
         else
         {
             Debug.Log("Você já clicou pra passar de fase!");
         }
-       
-        return;
+      
     }
+
+
+
+    IEnumerator waitForSound(AudioSource audio)
+    {
+        //Wait Until Sound has finished playing
+        while (audio.isPlaying)
+        {
+            yield return null;
+        }
+
+        SceneManager.LoadScene(proxCena_static);
+      
+    }
+
+
+
 }
