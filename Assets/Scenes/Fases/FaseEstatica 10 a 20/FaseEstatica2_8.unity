@@ -572,6 +572,7 @@ MonoBehaviour:
   cenaAtualNome: FaseEstatica2_8
   cenaProxNome: FaseEstatica2_9
   itens_clicarMax: 18
+  codFase: 3
   spriteParaCarregar_Animal: All/Sprites/Animais/Espaco/et_amarelo
 --- !u!1001 &331890985
 PrefabInstance:

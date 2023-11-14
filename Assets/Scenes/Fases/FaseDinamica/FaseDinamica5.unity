@@ -508,6 +508,7 @@ MonoBehaviour:
   nomeCena: FaseDinamica5
   tipoFase: Egito
   proximaCena: TelaMuitoBem
+  codFase: 2
   GetHud: {fileID: 538885382}
   obj:
   - {fileID: 305598107}

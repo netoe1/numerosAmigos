@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Threading.Tasks;
 using UnityEditor;
 using static Unity.VisualScripting.Member;
+using System.Xml.Serialization;
 
 public class ControllerItensClicados
 {
@@ -79,7 +80,7 @@ public class CenaDinamica : MonoBehaviour
     [SerializeField] private string nomeCena;
     [SerializeField] private string tipoFase;
     [SerializeField] private string proximaCena;
-    private static string proxCena_static;
+    [SerializeField] private int codFase;
 
     /*Variáveis auxiliares*/
     private static GameObject gameobject_ext;
@@ -108,9 +109,16 @@ public class CenaDinamica : MonoBehaviour
 
     ReprodutorSom rs_cliqueBotao;
 
+    // Atributos de acesso externo 
+    private static int codFase_static;
+    private static string proxCena_static;
+
     void Start()
     {
+
+        //  Inicializando atributos estáticos para acesso externo.
         proxCena_static = proximaCena;
+        codFase_static = codFase;
         //  Configurando clicar do botão!
         rs_cliqueBotao = new ReprodutorSom("Sounds/Contagem",this.gameObject);
         permitirPassarFase = true;
@@ -200,6 +208,29 @@ public class CenaDinamica : MonoBehaviour
         {
             if (itensClicados.itens_clicados == itensClicados.LIMITE_CLICAR)
             {
+                if (proxCena_static == "TelaMuitoBem")
+                {
+                    switch (codFase_static)
+                    {
+                        case 1:
+                            Pontuacao.fase1_concluida = true;
+                            break;
+                        case 2:
+                            Pontuacao.fase2_concluida = true;
+                            break;
+                        case 3:
+                            Pontuacao.fase3_concluida = true;
+                            break;
+                        case 4:
+                            Pontuacao.fase4_concluida = true;
+                            break;
+                        default:
+                            throw new UnityException("Fase inválida nos parâmentros da fase.");
+                    }
+
+                }
+
+
                 permitirPassarFase = false;
                 ctrlFase.acrescentarFase();
                 aux.reproduzirArquivo("muito_bem");

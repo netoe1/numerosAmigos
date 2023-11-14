@@ -661,6 +661,7 @@ MonoBehaviour:
   cenaAtualNome: fazendaFase10
   cenaProxNome: TelaMuitoBem
   itens_clicarMax: 10
+  codFase: 1
   spriteParaCarregar_Animal: All/Sprites/Animais/Fazenda/galinha
 --- !u!1001 &331890985
 PrefabInstance:

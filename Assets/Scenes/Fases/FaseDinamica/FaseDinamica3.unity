@@ -502,6 +502,7 @@ MonoBehaviour:
   nomeCena: FaseDinamica3
   tipoFase: Espaco
   proximaCena: FaseDinamica4
+  codFase: 2
   GetHud: {fileID: 538885382}
   obj:
   - {fileID: 305598107}

@@ -387,6 +387,7 @@ MonoBehaviour:
   cenaAtualNome: fazendaFase2
   cenaProxNome: fazendaFase3
   itens_clicarMax: 2
+  codFase: 1
   spriteParaCarregar_Animal: All/Sprites/Animais/Fazenda/vaca
 --- !u!1001 &331890985
 PrefabInstance:

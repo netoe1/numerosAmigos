@@ -772,6 +772,7 @@ MonoBehaviour:
   nomeCena: FaseDinamica2_2
   tipoFase: Mar
   proximaCena: FaseDinamica2_3
+  codFase: 4
   GetHud: {fileID: 538885382}
   obj:
   - {fileID: 305598107}

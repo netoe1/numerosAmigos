@@ -781,6 +781,7 @@ MonoBehaviour:
   nomeCena: FaseDinamica2_4
   tipoFase: Fazenda
   proximaCena: FaseDinamica2_5
+  codFase: 4
   GetHud: {fileID: 538885382}
   obj:
   - {fileID: 305598107}

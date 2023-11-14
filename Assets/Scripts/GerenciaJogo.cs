@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.Rendering;
+using System;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 
 /*
@@ -33,8 +36,8 @@ public class GerenciaJogo : MonoBehaviour
     [SerializeField] private string cenaAtualNome;
     [SerializeField] private string cenaProxNome;
     [SerializeField] private int itens_clicarMax;
-
-    private static string cenaProxNome_static;
+    [SerializeField] private int codFase;
+    
     //Parâmetros controle fase
     private static int itens_clique;
     private static int itens_clicarMax_static;
@@ -43,10 +46,10 @@ public class GerenciaJogo : MonoBehaviour
     List<GameObject> itens = new List<GameObject>();
 
     //Variáveis de acesso externo:
-   // private static string cenaProxNome_static;
-    private static GameObject gameObject_static;
-    //public static Text textoHud_static;
-
+    private static GameObject gameObject_static; 
+    private static string cenaProxNome_static;
+    private static string cenaAtualNome_static;
+    private static int codFase_static;
     // Pré Configurações sprites.
 
     [SerializeField] private string spriteParaCarregar_Animal;
@@ -75,6 +78,8 @@ public class GerenciaJogo : MonoBehaviour
 
         //Inicializando Objetos para acesso externo.
         cenaProxNome_static = cenaProxNome;
+        cenaAtualNome_static = cenaAtualNome;
+        codFase_static = codFase;
         gameObject_static = this.gameObject;
         itens_clicarMax_static = itens_clicarMax;
         // textoHud_static = this.nroHud;
@@ -92,10 +97,35 @@ public class GerenciaJogo : MonoBehaviour
         ReprodutorSom reprodutor = new ReprodutorSom("Sounds/Geral",gameObject_static);
         Debug.Log("ItensCLique:" + itens_clique);
         GerenciaJogo instance = FindObjectOfType<GerenciaJogo>();
+
+
+
         if (permitirPassarCena)
         {
             if (itens_clique == itens_clicarMax_static)
             {
+                if (cenaProxNome_static == "TelaMuitoBem")
+                {
+                    switch (codFase_static)
+                    {
+                        case 1:
+                            Pontuacao.fase1_concluida = true;
+                            break;
+                        case 2:
+                            Pontuacao.fase2_concluida = true;
+                            break;
+                        case 3:
+                            Pontuacao.fase3_concluida = true;
+                            break;
+                        case 4:
+                            Pontuacao.fase4_concluida = true;
+                            break;
+                        default:
+                            throw new UnityException("Fase inválida nos parâmentros da fase.");
+                    }
+
+                }
+                   
                 permitirPassarCena = false;
                 reprodutor.reproduzirArquivo("muito_bem");
                 instance.StartCoroutine(waitForSound(reprodutor.audioSource));

@@ -557,6 +557,7 @@ MonoBehaviour:
   cenaAtualNome: FaseEstatica2_3
   cenaProxNome: FaseEstatica2_4
   itens_clicarMax: 13
+  codFase: 3
   spriteParaCarregar_Animal: All/Sprites/Animais/Fazenda/abelha
 --- !u!1001 &331890985
 PrefabInstance:

@@ -518,6 +518,7 @@ MonoBehaviour:
   nomeCena: FaseDinamica2_1
   tipoFase: Egito
   proximaCena: FaseDinamica2_2
+  codFase: 4
   GetHud: {fileID: 538885382}
   obj:
   - {fileID: 305598107}

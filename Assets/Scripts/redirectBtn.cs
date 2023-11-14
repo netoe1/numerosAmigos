@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class redirectBtn : MonoBehaviour
 {
-
-    private bool reproduzirSom_resUi = false;
     public void fecharJogo()
     {
         Application.Quit();

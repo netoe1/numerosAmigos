@@ -572,6 +572,7 @@ MonoBehaviour:
   cenaAtualNome: FaseEstatica2_10
   cenaProxNome: TelaMuitoBem
   itens_clicarMax: 20
+  codFase: 3
   spriteParaCarregar_Animal: All/Sprites/Animais/Espaco/et_verde
 --- !u!1001 &331890985
 PrefabInstance:
